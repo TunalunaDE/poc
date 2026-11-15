@@ -16,6 +16,20 @@ scripts/
   whack_a_mole.py
 ```
 
+### Compact product scripts (`scripts/src/` and `tools/compact_product.py`)
+
+The brain keeps a product's whole source text in its RAM, so a long, well-commented
+script can run out of memory on the Pico. A big product therefore keeps its readable
+source in `scripts/src/<name>.py`, and the file the brain downloads,
+`scripts/<name>.py`, is a generated copy without comments or docstrings:
+
+```
+python tools/compact_product.py scripts/src/smart_alarm_maxi.py scripts/smart_alarm_maxi.py
+```
+
+Edit the source, never the generated copy. The tool refuses to write if the copy
+would behave differently. Small products don't need this.
+
 The earlier trio demos (light-sound-controller, chime-box, two-button-box,
 desk-lamp, desk-lamp-dimmer) were bring-up scaffolding and were retired in
 Sep 2026; they remain in git history.
