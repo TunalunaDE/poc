@@ -4,6 +4,10 @@ Newest first. One entry per version bump, written in the same commit as the bump
 `## <version> - <date>` then `- DEV-xx - what changed and why. Breaking: yes/no.`
 Convention: Confluence "Development Conventions" (SD space, page 120160257).
 
+## smart-alarm-maxi 1.0.0 / 2.6.0 (catalog) - 2026-11-15
+
+- DEV-236 - NEW Smart Alarm Maxi (`smart-alarm-maxi-v1`, `scripts/smart_alarm_maxi.py`), same modules as the Smart Lamp Maxi (which stays unchanged at 1.1.1). Two alarms (`alarm1_time`, `alarm2_time`) armed with one setting `alarm_armed` = off / 1 / 2 / both; the wake-up light ramps towards the next armed alarm. LED Button on the home screen: press = arm Alarm 1 -> Alarm 2 -> both -> off (1/2/3 beeps, low beep = off), double press = Sundown, hold 1 s = lamp on/off. In the menu the LED Button goes one step back, the knob tap is OK. Six alarm tones (`alarm_tone`): Classic, Gentle chime, Mozart (Eine kleine Nachtmusik), Chiptune, Birds, Sunrise scale, previewed while choosing in the menu. Display direction setting (`rotation` 0/90/180/270) with its own portrait layout, changeable in the app and in the menu. Everything is drawn inside a 150x70 (portrait 70x150) safe area because the panel has rounded corners. Menu "Reset" keeps the time zone and the display direction. Breaking: no (new product).
+
 ## smart-lamp-maxi 1.1.1 - 2026-10-23
 
 - DEV-151 - switching the lamp on and off several times very quickly could leave it in the wrong colour for up to 10 seconds. The lamp now sends its state once more half a second after the last press, so it shows the right colour (or stays off) right away. Breaking: no.
