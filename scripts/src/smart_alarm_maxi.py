@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-# smart_alarm_maxi.py — noknok Smart Alarm Maxi (Setup 3: USB LEDs + I2C controls + Display)  v1.0.1
+# smart_alarm_maxi.py — noknok Smart Alarm Maxi (Setup 3: USB LEDs + I2C controls + Display)  v1.0.2
 #
 # The alarm-clock sibling of the Smart Lamp Maxi (same modules: LEDs 16x (or
 # 8x), LED Button, Knob, Buzzer, Display). Lamp + clock + kitchen timer + wake-up
@@ -321,7 +321,42 @@ menu_idx      = 0
 menu_used_at  = 0.0
 edit          = None    # dict while editing a menu item
 
-MENU = ["Timer", "Alarm 1", "Alarm 2", "Tone", "Sundown", "Display", "Reset", "Back"]
+MENU = ["Timer", "Alarm 1", "Alarm 2", "Tone", "Sundown", "Display", "Info", "Reset", "Back"]
+
+# ── Info pages (menu "Info"): WiFi, IP, memory, link counters ─────────────────
+# Read on the lamp itself, so they also work when the app cannot reach it.
+# mem_min = lowest free heap seen by the main loop (gc.mem_free() is cheap).
+import gc
+mem_min = gc.mem_free()
+INFO_PAGES = 5
+_info_cache = (None, 0.0, "")      # (page, time, text): refresh at most once per second
+
+def info_text(page):
+    global _info_cache
+    now = time.monotonic()
+    if _info_cache[0] == page and now - _info_cache[1] < 1.0:
+        return _info_cache[2]
+    try:
+        import wifi
+        if page == 0:
+            t = "WiFi up" if wifi.radio.connected else "WiFi down"
+        elif page == 1:
+            ip = wifi.radio.ipv4_address
+            t = str(ip) if ip is not None else "no IP"
+            if L.get("portrait") and len(t) > 8:
+                t = t[t.rfind(".", 0, t.rfind(".")):]     # ".1.81" fits 8 columns
+        elif page == 2:
+            t = "free %dK" % (gc.mem_free() // 1024)
+        elif page == 3:
+            t = "min %dK" % (mem_min // 1024)
+        else:
+            import noknok_rpc
+            k = noknok_rpc._link
+            t = "d%d r%d" % (k["drops"], k["rejoins"])   # WiFi drops / rejoin tries
+    except Exception:
+        t = "?"
+    _info_cache = (page, now, t)
+    return t
 
 
 # ── Buzzer ─────────────────────────────────────────────────────────────────────
@@ -839,6 +874,8 @@ def open_item(name):
         edit = {"title": "Sundown", "v": sundown_minutes()}
     elif name == "Display":
         edit = {"title": "Display", "v": ROT_ORDER.index(rotation_id())}
+    elif name == "Info":
+        edit = {"title": "Info", "v": 0}
     elif name == "Reset":
         edit = {"title": "Reset?", "v": 0}
     edit["item"] = name
@@ -857,6 +894,8 @@ def edit_value_text():
         return "%d min" % v
     if it == "Display":
         return "%s deg" % ROT_ORDER[v]
+    if it == "Info":
+        return info_text(v)
     return "Yes" if v else "No"
 
 def edit_turn(delta):
@@ -878,6 +917,8 @@ def edit_turn(delta):
         v = max(5, min(60, v + 5 * delta))
     elif it == "Display":
         v = (v + delta) % len(ROT_ORDER)
+    elif it == "Info":
+        v = (v + delta) % INFO_PAGES
     else:
         v = (v + delta) % 2
     edit["v"] = v
@@ -905,6 +946,9 @@ def edit_confirm():
     elif it == "Display":
         if s.set("rotation", ROT_ORDER[v]):
             apply_rotation()             # the app's on_change does the same
+    elif it == "Info":
+        go_home()                        # read-only: tap just closes it
+        return
     elif v:
         reset_lamp()
         go_home()
@@ -999,6 +1043,9 @@ kn_start = None; kn_long = False; kn_was = False     # knob
 
 while True:
     now = time.monotonic()
+    _f = gc.mem_free()
+    if _f < mem_min:
+        mem_min = _f                             # for the Info page
     pb = button.read() if button else None
     kn = knob.read()   if knob   else None
 

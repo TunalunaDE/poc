@@ -1,7 +1,7 @@
 {
   "id": "smart-alarm-maxi-v1",
   "name": "Smart Alarm Maxi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "buildwithnoknok",
   "brain_type": "pico_w",
   "price": 0.0,
@@ -28,7 +28,7 @@
     {
       "dest": "product.py",
       "url": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/scripts/smart_alarm_maxi.py",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "required": true
     }
   ],
@@ -49,7 +49,7 @@
     { "control": "Button LED",                    "action": "Dark. Shows a new colour for 3 s after you change it" },
     { "control": "Knob turn",                     "action": "Brightness, or colour after a tap. The framed bar on the display shows which" },
     { "control": "Knob tap",                      "action": "Switch the knob between brightness and colour (back to brightness after 5 s)" },
-    { "control": "Knob hold (2 s)",               "action": "Menu: Timer, Alarm 1, Alarm 2, Tone, Sundown, Display, Reset. Turn to choose, tap = OK, button = one step back, hold the knob to leave" },
+    { "control": "Knob hold (2 s)",               "action": "Menu: Timer, Alarm 1, Alarm 2, Tone, Sundown, Display, Info (WiFi, IP, memory), Reset. Turn to choose, tap = OK, button = one step back, hold the knob to leave" },
     { "control": "Timer or alarm ringing",        "action": "Button press = stop the timer / snooze the alarm 5 min. Hold the button = stop the alarm. A press while snoozed cancels the snooze" },
     { "control": "Hold button while plugging in", "action": "Factory reset: keep holding until the LED flashes, goes dark and the buzzer sounds (about 8 s)" }
   ],
