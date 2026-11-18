@@ -67,6 +67,9 @@ the same flat folders (decided in ADR-010, 18 Nov 2026):
   request you agree to that.
 - **Check first:** `python tools/validate_product.py <your-product-id>` (Python 3, nothing to
   install) must show no ERROR. The same check runs on your pull request.
+- **Try it on your own brain before publishing:** set the brain up with the app (any product),
+  push your files to your fork, then `python tools/dev_install.py --manifest <raw URL of your
+  manifest> --brain <brain IP>`. Nothing is published; the app's catalog is not touched.
 - **How:** fork this repo, add your files, open a pull request. The template asks for what
   we need. Without GitHub, use the upload page (coming, DEV-258).
 - **Review and publishing:** automatic checks first, then a person from the noknok team
