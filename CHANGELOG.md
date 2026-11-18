@@ -4,6 +4,10 @@ Newest first. One entry per version bump, written in the same commit as the bump
 `## <version> - <date>` then `- DEV-xx - what changed and why. Breaking: yes/no.`
 Convention: Confluence "Development Conventions" (SD space, page 120160257).
 
+## catalog 2.7.0 - 2026-11-18
+
+- DEV-240 - product pictures: new optional manifest field `image` (raw URL of `images/<product-id>.webp`, 640x640 transparent WebP, max 60 KB, CC BY-SA 4.0; spec in Ecosystem `software/product-manifest.md`). Set for Multicolor Lamp 16x, Smart Lamp Maxi, Smart Alarm Maxi and Whack-a-Mole; Button Light, Smart Lamp Mini and Smart Lamp (Midi) have no photo yet and show the app's placeholder. Product versions unchanged (no script or settings change). Breaking: no.
+
 ## smart-alarm-maxi 1.0.2 - 2026-11-15
 
 - DEV-236 - new menu page "Info": turn the knob to page through WiFi up/down, IP address, free memory now, the lowest free memory seen since start, and the WiFi drop / rejoin counters. Read on the lamp itself, so it also works when the app cannot reach the lamp (added to find why the brain left the WiFi while 1.0.1 ran). Breaking: no.

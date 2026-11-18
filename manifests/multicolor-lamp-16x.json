@@ -7,6 +7,7 @@
   "price": 0.0,
   "setup_pattern": "Setup 2 (USB-C only)",
   "description": "A lamp built on the LEDs 16x ring. Every LED has its own white light, so it gives a clean neutral white as well as any colour, or a colour softened with white. Control it from the app, which also shows the ring's temperature and tells you when it dims itself to stay cool.",
+  "image": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/images/multicolor-lamp-16x-v1.webp",
 
   "modules_required": [
     { "type": "usb_leds_16x", "count": 1 }
