@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: MIT
+# DEV-255 (ADR-010): every pull request into the public catalog runs the same automatic
+# checks a maker can run locally:  python tools/validate_product.py --all
+# The manifest schema comes from the public Ecosystem repo (one home for the spec).
+# To BLOCK merging on failure, the poc `protect-main` ruleset must list the check
+# "validate-products / validate" as required (repo setting, Christopher).
+name: validate-products
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: buildwithnoknok/Ecosystem
+          path: _ecosystem
+          sparse-checkout: software/product-manifest.schema.json
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validator self-test
+        run: python -I tools/test_validate_product.py
+        env:
+          NOKNOK_SCHEMA: _ecosystem/software/product-manifest.schema.json
+      - name: Check every product in the catalog
+        run: python -I tools/validate_product.py --all --schema _ecosystem/software/product-manifest.schema.json

@@ -12,6 +12,8 @@
 - [ ] `images/<id>.webp` (optional: 640 x 640 px WebP, transparent, max 60 KB)
 - [ ] one line in `manifests/catalog.json`
 
+- [ ] `python tools/validate_product.py <id>` shows no ERROR
+
 ## Credit
 
 - [ ] Show me as maker: name and optional https link in the manifest's `maker` field

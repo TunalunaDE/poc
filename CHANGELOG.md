@@ -4,6 +4,10 @@ Newest first. One entry per version bump, written in the same commit as the bump
 `## <version> - <date>` then `- DEV-xx - what changed and why. Breaking: yes/no.`
 Convention: Confluence "Development Conventions" (SD space, page 120160257).
 
+## Tooling - 2026-11-18 (DEV-255)
+
+- DEV-255 - `tools/validate_product.py`: one check for every product before it is published (ADR-010), Python standard library only, offline. Modes: `<id>` / `--all` (this repo, via catalog.json) and `--folder <dir>` (upload folder: manifest.json, product.py, image.webp, README.md); `--json` for the upload page (DEV-258). Checks: manifest against the Ecosystem schema, catalog id unique and matching, firmware minimums only for required modules; script parses, size (warning > 30 KB, error > 45 KB), SPDX header (error for community, warning for ours), no network modules / file writes / storage / microcontroller / settings.toml / os.getenv / secrets (wifi and noknok_rpc imports and web addresses = warnings); image WebP 640x640 <= 60 KB; licence note in a folder README. GitHub Action `.github/workflows/validate-products.yml` runs the self-test and `--all` on every pull request and push to main. Tests: `tools/test_validate_product.py` (22). All 7 products pass (warnings: 4 scripts without SPDX header, Smart Lamp Maxi 36 KB, Smart Alarm Maxi imports wifi/noknok_rpc). Breaking: no.
+
 ## Repo docs - 2026-11-18 (DEV-256)
 
 - DEV-256 - contributing notes for makers in README.md (flat layout, unique id, `source: community`, optional `maker` credit, licence, merge = published), pull-request template and CODEOWNERS (`@TunalunaORG`). Pictures licence line added. No product or catalog change. Breaking: no.

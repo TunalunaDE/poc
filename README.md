@@ -65,6 +65,8 @@ the same flat folders (decided in ADR-010, 18 Nov 2026):
   credit on the product page.
 - Licence: scripts MIT, manifest and picture CC BY-SA 4.0 (see below). By opening a pull
   request you agree to that.
+- **Check first:** `python tools/validate_product.py <your-product-id>` (Python 3, nothing to
+  install) must show no ERROR. The same check runs on your pull request.
 - **How:** fork this repo, add your files, open a pull request. The template asks for what
   we need. Without GitHub, use the upload page (coming, DEV-258).
 - **Review and publishing:** automatic checks first, then a person from the noknok team
