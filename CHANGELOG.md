@@ -4,6 +4,10 @@ Newest first. One entry per version bump, written in the same commit as the bump
 `## <version> - <date>` then `- DEV-xx - what changed and why. Breaking: yes/no.`
 Convention: Confluence "Development Conventions" (SD space, page 120160257).
 
+## Repo docs - 2026-11-18 (DEV-256)
+
+- DEV-256 - contributing notes for makers in README.md (flat layout, unique id, `source: community`, optional `maker` credit, licence, merge = published), pull-request template and CODEOWNERS (`@TunalunaORG`). Pictures licence line added. No product or catalog change. Breaking: no.
+
 ## catalog 2.7.0 - 2026-11-18
 
 - DEV-240 - product pictures: new optional manifest field `image` (raw URL of `images/<product-id>.webp`, 640x640 transparent WebP, max 60 KB, CC BY-SA 4.0; spec in Ecosystem `software/product-manifest.md`). Set for Multicolor Lamp 16x, Smart Lamp Maxi, Smart Alarm Maxi and Whack-a-Mole; Button Light, Smart Lamp Mini and Smart Lamp (Midi) have no photo yet and show the app's placeholder. Product versions unchanged (no script or settings change). Breaking: no.

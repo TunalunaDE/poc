@@ -1,0 +1,3 @@
+# DEV-256 / ADR-010: every change to the public catalog is reviewed and merged by the
+# noknok org account. Merge to main = published in the app.
+* @TunalunaORG

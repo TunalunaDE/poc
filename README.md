@@ -46,7 +46,36 @@ Sep 2026; they remain in git history.
 Adding a product = publishing a new manifest (+ script) and adding it to `catalog.json`.
 No app code changes.
 
+## Contributing a product (makers)
+
+Everything here is public and open. A maker product is the same few files as ours, in
+the same flat folders (decided in ADR-010, 18 Nov 2026):
+
+| File | What |
+| --- | --- |
+| `manifests/<name>.json` | the manifest; spec: [product-manifest.md](https://github.com/buildwithnoknok/Ecosystem/blob/main/software/product-manifest.md) |
+| `scripts/<name>.py` | the `product.py` the brain runs (MIT, SPDX header first line) |
+| `images/<id>.webp` | optional picture: 640 x 640 px WebP, transparent background, max 60 KB |
+| one line in `manifests/catalog.json` | `{ "id": "<id>", "manifest": "<raw URL of your manifest>" }` |
+
+- **The id must be unique** in `catalog.json`: kebab-case ending in `-v1` (`my-desk-clock-v1`).
+- In your manifest set `"source": "community"`. For a credit add
+  `"maker": { "name": "Your Name", "url": "https://your.site" }` (`url` optional, https only).
+  Leave `maker` out if you want no credit. The app shows a small "Community" label and the
+  credit on the product page.
+- Licence: scripts MIT, manifest and picture CC BY-SA 4.0 (see below). By opening a pull
+  request you agree to that.
+- **How:** fork this repo, add your files, open a pull request. The template asks for what
+  we need. Without GitHub, use the upload page (coming, DEV-258).
+- **Review and publishing:** automatic checks first, then a person from the noknok team
+  reads the script (it runs on customers' devices). Only the noknok org account merges.
+  **Merged to `main` = published**: the app reads `main`, so the product appears in every
+  app on its next catalog refresh. Removing the files and the catalog line removes it again.
+
+Authoring guide: [authoring-products.md](https://github.com/buildwithnoknok/Ecosystem/blob/main/software/authoring-products.md).
+
 ## License
 
 - **Product scripts (`scripts/*.py`)** — [MIT](LICENSE)
 - **Catalog & manifests (`manifests/*.json`)** — [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- **Product pictures (`images/*.webp`)** — [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
