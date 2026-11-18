@@ -1,0 +1,42 @@
+{
+  "catalog_version": "2.7.0-dev256",
+  "updated": "2026-11-18",
+  "products": [
+    {
+      "id": "sample-maker-light-v1",
+      "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/dev-256-sample/manifests/sample-maker-light.json"
+    },
+    {
+      "id": "sample-anon-light-v1",
+      "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/dev-256-sample/manifests/sample-anon-light.json"
+    },
+    {
+      "id": "multicolor-lamp-16x-v1",
+      "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/multicolor-lamp-16x.json"
+    },
+    {
+      "id": "smart-alarm-maxi-v1",
+      "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/smart-alarm-maxi.json"
+    },
+    {
+      "id": "smart-lamp-maxi-v1",
+      "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/smart-lamp-maxi.json"
+    },
+    {
+      "id": "smart-lamp-mini-v1",
+      "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/smart-lamp-mini.json"
+    },
+    {
+      "id": "smart-lamp-v1",
+      "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/smart-lamp.json"
+    },
+    {
+      "id": "whack-a-mole-v1",
+      "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/whack-a-mole.json"
+    },
+    {
+      "id": "button-light-v1",
+      "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/button-light.json"
+    }
+  ]
+}
