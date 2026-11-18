@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 # bench_rpc_product.py — the smallest possible product, for DEV-34 bench runs.
 #
 # Put on the bench Pico as /data/product.py (`pico.py put bench_rpc_product.py
