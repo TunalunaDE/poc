@@ -15,6 +15,12 @@
     { "id": "puzzle-box-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/puzzle-box.json" },
     { "id": "breathing-guide-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/breathing-guide.json" },
     { "id": "plant-climate-monitor-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/plant-climate-monitor.json" },
-    { "id": "desk-guard-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/desk-guard.json" }
+    { "id": "desk-guard-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/desk-guard.json" },
+    { "id": "metronome-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/metronome.json" },
+    { "id": "dice-roller-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/dice-roller.json" },
+    { "id": "stopwatch-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/stopwatch.json" },
+    { "id": "morse-tapper-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/morse-tapper.json" },
+    { "id": "spirit-level-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/spirit-level.json" },
+    { "id": "light-meter-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/light-meter.json" }
   ]
 }

@@ -6,7 +6,7 @@ Convention: Confluence "Development Conventions" (SD space, page 120160257).
 
 ## catalog 2.8.0 - 2026-11-20
 
-- (no DEV ticket yet, exploration account) - seven new products: quiz-buzzers-v1, reaction-duel-v1, focus-timer-v1, puzzle-box-v1, breathing-guide-v1 (all noknok modules only) and plant-climate-monitor-v1, desk-guard-v1 (noknok modules + third-party Qwiic / Stemma QT boards, manifest `thirdparty: true`). Each product has its own pull request (manifest + script); this one lists them in the catalog. Merge it LAST, and delete the line of any product that was not merged. All 7 pass `validate_product.py` (warnings only: no firmware minimum for third-party types). Breaking: no.
+- (no DEV ticket yet, exploration account) - thirteen new products, each with its own pull request (manifest + script); this entry lists them in the catalog. noknok modules only: quiz-buzzers-v1, reaction-duel-v1, focus-timer-v1, puzzle-box-v1, breathing-guide-v1, metronome-v1, dice-roller-v1, stopwatch-v1, morse-tapper-v1. With third-party Qwiic / Stemma QT boards (manifest `thirdparty: true`): plant-climate-monitor-v1, desk-guard-v1, spirit-level-v1, light-meter-v1. Merge this PR LAST and delete the line of any product that was not merged. All pass `validate_product.py` (warnings only: no firmware minimum for third-party types). Breaking: no.
 
 ## Tooling - 2026-11-18 (DEV-259)
 
