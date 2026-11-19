@@ -1,6 +1,6 @@
 {
-  "catalog_version": "2.7.0",
-  "updated": "2026-11-18",
+  "catalog_version": "2.8.0",
+  "updated": "2026-11-20",
   "products": [
     { "id": "multicolor-lamp-16x-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/multicolor-lamp-16x.json" },
     { "id": "smart-alarm-maxi-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/smart-alarm-maxi.json" },
@@ -8,6 +8,13 @@
     { "id": "smart-lamp-mini-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/smart-lamp-mini.json" },
     { "id": "smart-lamp-v1",      "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/smart-lamp.json" },
     { "id": "whack-a-mole-v1",    "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/whack-a-mole.json" },
-    { "id": "button-light-v1",    "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/button-light.json" }
+    { "id": "button-light-v1",    "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/button-light.json" },
+    { "id": "quiz-buzzers-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/quiz-buzzers.json" },
+    { "id": "reaction-duel-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/reaction-duel.json" },
+    { "id": "focus-timer-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/focus-timer.json" },
+    { "id": "puzzle-box-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/puzzle-box.json" },
+    { "id": "breathing-guide-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/breathing-guide.json" },
+    { "id": "plant-climate-monitor-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/plant-climate-monitor.json" },
+    { "id": "desk-guard-v1", "manifest": "https://raw.githubusercontent.com/buildwithnoknok/poc/main/manifests/desk-guard.json" }
   ]
 }
